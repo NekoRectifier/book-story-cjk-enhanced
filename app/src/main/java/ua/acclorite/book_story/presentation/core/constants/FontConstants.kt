@@ -76,7 +76,7 @@ fun provideFonts(): List<FontWithName> {
             "noto_serif",
             UIText.StringValue("Noto Serif"),
             provideVariableFontFamily(
-                normalResId = R.font.notoserif_variable,
+                normalResId = R.font.notoserif_cjk_variable,
                 italicResId = R.font.notoserif_variable_italic
             )
         ),
