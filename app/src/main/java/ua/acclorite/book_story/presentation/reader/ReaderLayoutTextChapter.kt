@@ -21,6 +21,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import ua.acclorite.book_story.domain.reader.FontWithName
 import ua.acclorite.book_story.domain.reader.ReaderText.Chapter
 import ua.acclorite.book_story.domain.reader.ReaderTextAlignment
 import ua.acclorite.book_story.presentation.core.components.common.StyledText
@@ -32,7 +33,8 @@ fun LazyItemScope.ReaderLayoutTextChapter(
     fontColor: Color,
     sidePadding: Dp,
     highlightedReading: Boolean,
-    highlightedReadingThickness: FontWeight
+    highlightedReadingThickness: FontWeight,
+    fontFamily: FontWithName
 ) {
     Column(
         Modifier
@@ -52,6 +54,7 @@ fun LazyItemScope.ReaderLayoutTextChapter(
             style = (if (!chapter.nested) MaterialTheme.typography.headlineMedium
             else MaterialTheme.typography.headlineSmall)
                 .copy(
+                    fontFamily = fontFamily.font, // make Chapter's font as same as paragraph's
                     color = fontColor,
                     textAlign = chapterTitleAlignment.textAlignment
                 ),

@@ -24,10 +24,10 @@ import ua.acclorite.book_story.domain.util.HorizontalAlignment
 import ua.acclorite.book_story.ui.reader.ReaderEvent
 
 @Composable
-fun LazyItemScope.ReaderLayoutText(
+fun LazyItemScope.ReaderLayoutText( // this part handles reader text layout arrangement
     activity: ComponentActivity,
     showMenu: Boolean,
-    entry: ReaderText,
+    entry: ReaderText, // don't know whats for
     imagesCornersRoundness: Dp,
     imagesAlignment: HorizontalAlignment,
     imagesWidth: Float,
@@ -78,7 +78,8 @@ fun LazyItemScope.ReaderLayoutText(
                 fontColor = fontColor,
                 sidePadding = sidePadding,
                 highlightedReading = highlightedReading,
-                highlightedReadingThickness = highlightedReadingThickness
+                highlightedReadingThickness = highlightedReadingThickness,
+                fontFamily = fontFamily // to support the feature of Chapter's same font
             )
         }
 
@@ -91,7 +92,7 @@ fun LazyItemScope.ReaderLayoutText(
                 fontColor = fontColor,
                 lineHeight = lineHeight,
                 fontThickness = fontThickness,
-                fontStyle = fontStyle,
+                fontStyle = fontStyle, // in which original code "Chapter" do not have this attribute...
                 textAlignment = textAlignment,
                 horizontalAlignment = horizontalAlignment,
                 fontSize = fontSize,
