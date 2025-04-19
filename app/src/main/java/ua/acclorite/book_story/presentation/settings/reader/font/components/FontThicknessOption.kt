@@ -16,6 +16,7 @@ import ua.acclorite.book_story.R
 import ua.acclorite.book_story.domain.reader.ReaderFontThickness
 import ua.acclorite.book_story.domain.ui.ButtonItem
 import ua.acclorite.book_story.presentation.core.components.settings.ChipsWithTitle
+import ua.acclorite.book_story.presentation.core.components.settings.SliderWithTitle
 import ua.acclorite.book_story.presentation.core.constants.provideFonts
 import ua.acclorite.book_story.ui.main.MainEvent
 import ua.acclorite.book_story.ui.main.MainModel
@@ -35,15 +36,20 @@ fun FontThicknessOption() {
 
     ChipsWithTitle(
         title = stringResource(id = R.string.font_thickness_option),
-        chips = ReaderFontThickness.entries.map {
+        chips = ReaderFontThickness.entries.map { // basically a loop inside RFT entries
             ButtonItem(
                 id = it.toString(),
-                title = when (it) {
+                title = when (it) { // "it" here stands for single entry from RFT entries
+                    // TODO modify
                     ReaderFontThickness.THIN -> stringResource(id = R.string.font_thickness_thin)
                     ReaderFontThickness.EXTRA_LIGHT -> stringResource(id = R.string.font_thickness_extra_light)
                     ReaderFontThickness.LIGHT -> stringResource(id = R.string.font_thickness_light)
                     ReaderFontThickness.NORMAL -> stringResource(id = R.string.font_thickness_normal)
                     ReaderFontThickness.MEDIUM -> stringResource(id = R.string.font_thickness_medium)
+                    ReaderFontThickness.SEMI_BOLD -> stringResource(id = R.string.font_thickness_semi_bold)
+                    ReaderFontThickness.BOLD -> stringResource(id = R.string.font_thickness_bold)
+                    ReaderFontThickness.EXTRA_BOLD -> stringResource(id = R.string.font_thickness_extra_bold)
+                    ReaderFontThickness.BLACK -> stringResource(id = R.string.font_thickness_black)
                 },
                 textStyle = MaterialTheme.typography.labelLarge.copy(
                     fontFamily = fontFamily.font,
@@ -60,4 +66,9 @@ fun FontThicknessOption() {
             )
         }
     )
+
+    //TODO add a variable slider to make this function works better
+//    SliderWithTitle(
+//
+//    )
 }
